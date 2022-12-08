@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEWS</title>
+
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: aquamarine;
+        }
+
+        .cardscontainer {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        img {
+            height: 179px;
+            width: 250px;
+        }
+
+        #cards {
+            background-color: rgb(205, 239, 194);
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 2px solid black;
+            width: 252px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 10px;
+            border-radius: 12px;
+        }
+
+        a {
+            text-decoration: none;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            color: black;
+            width: 100px;
+        }
+
+
+        button {
+            /* margin-top: 20px ; */
+            margin-bottom: 20px;
+            text-align: center;
+            width: 100px;
+            /* display: flex; */
+            /* justify-content: center; */
+            margin: 20px auto;
+        }
+
+        p {
+            text-align: right;
+        }
+
+        h2 {
+            font-size: 36px;
+            text-align: center;
+            background: beige;
+        }
+
+        #searchbox {
+            padding: 10px px;
+            width: 244px;
+            height: 30px;
+            font-size: 14px;
+            outline: none;
+            margin: 5px auto;
+            display: block;
+            /* border: #751ac9; */
+            /* outline: aquamarine; */
+            border: 1px solid #751ac9;
+        }
+
+        .box {
+            display: flex;
+            justify-content: space-around;
+            width: 400px;
+            margin: auto;
+            /* height: 20px; */
+            align-items: center;
+        }
+        
+
+        #getnews {
+            height: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Daily Times </h2>
+
+    <form action="/requireNews" method="post">
+        <div class="box">
+            <input type="search" name="search" id="searchbox" placeholder="Enter the Topic">
+            <input type="submit" value="Fetch Me News ! " id="getnews">
+        </div>
+    </form>
+
+
+    <div class="cardscontainer">
+
+        <% for(let i=0 ; i < array.length ; i++){ %>
+            <div id="cards">
+                <h3>
+                    <%= array[i].title %>
+                </h3>
+                <img src=" <%= array[i].img %> ">
+
+                <button><a href="<%= array[i].url %>">Read More .. </a></button>
+                <p><u>Author</u> : <%= array[i].author %>
+                </p>
+
+            </div>
+            <%} %>
+
+    </div>
+
+    <script>
+
+    </script>
+</body>
+
+</html>
