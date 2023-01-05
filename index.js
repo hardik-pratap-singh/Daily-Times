@@ -6,6 +6,7 @@ const ejs = require("ejs");
 const { json } = require("express");
 const PORT = process.env.PORT || 3000;
 const bodyParser = require("body-parser")
+const fetch = require("node-fetch")
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
