@@ -1,5 +1,5 @@
 {
-  "name": "new-folder-(4)",
+  "name": "daily-times",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,7 +14,7 @@
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
-    "node-fetch": "^3.3.0",
+    "node-fetch": "2.0",
     "nodemon": "^2.0.20"
   }
 }

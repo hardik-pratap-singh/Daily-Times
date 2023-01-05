@@ -1,14 +1,14 @@
 
-import express from "express"
-const app = express();
-const { json } = require("express");
-const PORT = process.env.PORT || 3000;
-import bodyParser from "body-parser"
-import fetch from "fetch"
+const express = require('express') 
+const app = express() ; 
+// const { json } = require('express');
+const bodyParser =  require('body-parser')
+const fetch = require('node-fetch')
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+const PORT = process.env.PORT || 3000;
 app.get("/", (req, res) => {
     res.redirect("/news") ; 
 })
