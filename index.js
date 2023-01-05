@@ -1,12 +1,10 @@
-require('dotenv').config() 
 
-const express = require("express");
+import express from "express"
 const app = express();
-const ejs = require("ejs");
 const { json } = require("express");
 const PORT = process.env.PORT || 3000;
-const bodyParser = require("body-parser")
-const fetch = require("node-fetch")
+import bodyParser from "body-parser"
+import fetch from "fetch"
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
