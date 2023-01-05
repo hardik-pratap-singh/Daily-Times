@@ -1,8 +1,10 @@
+require('dotenv').config() 
+
 const express = require("express");
 const app = express();
 const ejs = require("ejs");
 const { json } = require("express");
-
+const PORT = process.env.PORT || 3000;
 const bodyParser = require("body-parser")
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -81,18 +83,10 @@ app.post("/requireNews" , (req , res) => {
 
             
         }) 
-
-
-        
-
-    
-
-
-
 })
 
 
-app.listen(3000, () => {
-    console.log("Server running @ 3000 ");
+app.listen(PORT, () => {
+    console.log(`Server running @ ${PORT}`);
 
 })
