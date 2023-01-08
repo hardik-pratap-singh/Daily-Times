@@ -55,12 +55,13 @@ let vardata ;
 app.post("/requireNews" , (req , res) => {
     const search = req.body.search ;  
 
-       fetch("https://newsapi.org/v2/everything?q="+search+"&sources=bbc-news&apiKey=ef321c68074544eeb8b728d3d1c16d3a&lang=en")
+    https://newsapi.org/v2/everything?q=tesla&apiKey=1244f596e7e941db8750db29782da6b5
+    //    fetch("https://newsapi.org/v2/everything?q="+search+"&sources=bbc-news&apiKey=1244f596e7e941db8750db29782da6b5&lang=en")
+       fetch("https://newsapi.org/v2/everything?q=" + search + "&apiKey=1244f596e7e941db8750db29782da6b5")
         .then(res => res.json())
         .then(data  => {
             let x = data.articles ; 
             // console.log(x) ; 
-
             x.forEach((ele) => {
                 matrix1.push({
                     title: ele.title,
@@ -69,7 +70,6 @@ app.post("/requireNews" , (req , res) => {
                     author : ele.source.id
                 })
             })
-
 
             // console.log(matrix1); 
 
